@@ -94,7 +94,7 @@ const fetchGet = async props => {
       }
     })
     .catch(error => {
-      console.error(error)
+      // console.error(error)
       if (failureAction) {
         failureAction()
       }
