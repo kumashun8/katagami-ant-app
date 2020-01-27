@@ -5,7 +5,7 @@ const baseUrl =
 
 // Auth失効時のリダイレクト
 export const redirectToWelcome = () =>
-  (window.location.href = `${baseUrl}/welcome`)
+  console.log(baseUrl)((window.location.href = `${baseUrl}/welcome`))
 
 // User
 export const fetchUser = async props => {
