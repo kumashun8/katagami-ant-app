@@ -19,6 +19,8 @@ export default () => {
   const [cookies, setCookies, removeCookies] = useCookies(['auth'])
   const classes = useStyles()
 
+  console.log(process.env.REACT_APP_DEV_API_URL)
+
   const handleSignIn = auth => {
     if (!cookies.auth) {
       let expires = new Date()
