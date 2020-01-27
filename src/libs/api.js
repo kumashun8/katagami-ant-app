@@ -4,8 +4,10 @@ const baseUrl =
     : process.env.REACT_APP_DEV_API_URL
 
 // Auth失効時のリダイレクト
-export const redirectToWelcome = () =>
-  console.log(baseUrl)((window.location.href = `${baseUrl}/welcome`))
+export const redirectToWelcome = () => {
+  console.log(baseUrl)
+  window.location.href = `${baseUrl}/welcome`
+}
 
 // User
 export const fetchUser = async props => {
