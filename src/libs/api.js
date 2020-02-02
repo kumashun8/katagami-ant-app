@@ -1,10 +1,8 @@
 const baseUrl = process.env.REACT_APP_API_URL
 
 // Auth失効時のリダイレクト
-export const redirectToWelcome = () => {
-  console.log(baseUrl)
-  window.location.href = `${baseUrl}/welcome`
-}
+export const redirectToWelcome = () =>
+  (window.location.href = `${baseUrl}/welcome`)
 
 // User
 export const fetchUser = async props => {
@@ -77,8 +75,6 @@ export const fetchLabels = async props => {
 const fetchGet = async props => {
   const { auth, url, successAction, failureAction } = props
 
-  console.log(auth)
-
   return await fetch(url, {
     mode: 'cors',
     headers: {
@@ -87,13 +83,13 @@ const fetchGet = async props => {
   })
     .then(response => response.json())
     .then(responseJson => {
-      // console.log(responseJson);
+      // console.log(responseJson)
       if (successAction) {
         successAction(responseJson)
       }
     })
     .catch(error => {
-      // console.error(error)
+      console.error(error)
       if (failureAction) {
         failureAction()
       }
