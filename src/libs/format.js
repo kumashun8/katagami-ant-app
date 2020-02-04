@@ -34,7 +34,7 @@ export const convertBoolToNumOfTiles = tileStates => {
   const numbersStr = tileStates
     .map((tile, i) => (tile ? i + 1 : ' '))
     .filter(number => number !== ' ')
-    .join(' ')
+    .join(', ')
 
   return numbersStr ? numbersStr : '該当無し'
 }
